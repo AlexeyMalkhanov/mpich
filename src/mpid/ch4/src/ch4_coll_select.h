@@ -21,7 +21,8 @@
 
 
 MPL_STATIC_INLINE_PREFIX const
-MPIDI_coll_algo_container_t *MPIDI_CH4_Barrier_select(MPIR_Comm * comm, MPIR_Errflag_t * errflag)
+MPIDI_CH4I_coll_algo_container_t *MPIDI_CH4I_Barrier_select(MPIR_Comm * comm,
+                                                            MPIR_Errflag_t * errflag)
 {
     if (comm->comm_kind == MPIR_COMM_KIND__INTERCOMM) {
         return &MPIDI_CH4I_Barrier_inter_composition_alpha_cnt;
@@ -36,11 +37,12 @@ MPIDI_coll_algo_container_t *MPIDI_CH4_Barrier_select(MPIR_Comm * comm, MPIR_Err
 }
 
 MPL_STATIC_INLINE_PREFIX const
-MPIDI_coll_algo_container_t *MPIDI_CH4_Bcast_select(void *buffer,
-                                                    int count,
-                                                    MPI_Datatype datatype,
-                                                    int root,
-                                                    MPIR_Comm * comm, MPIR_Errflag_t * errflag)
+MPIDI_CH4I_coll_algo_container_t *MPIDI_CH4I_Bcast_select(void *buffer,
+                                                          int count,
+                                                          MPI_Datatype datatype,
+                                                          int root,
+                                                          MPIR_Comm * comm,
+                                                          MPIR_Errflag_t * errflag)
 {
     int nbytes = 0;
     MPI_Aint type_size = 0;
@@ -67,13 +69,14 @@ MPIDI_coll_algo_container_t *MPIDI_CH4_Bcast_select(void *buffer,
 }
 
 MPL_STATIC_INLINE_PREFIX const
-MPIDI_coll_algo_container_t *MPIDI_CH4_Allreduce_select(const void *sendbuf,
-                                                        void *recvbuf,
-                                                        int count,
-                                                        MPI_Datatype
-                                                        datatype,
-                                                        MPI_Op op,
-                                                        MPIR_Comm * comm, MPIR_Errflag_t * errflag)
+MPIDI_CH4I_coll_algo_container_t *MPIDI_CH4I_Allreduce_select(const void *sendbuf,
+                                                              void *recvbuf,
+                                                              int count,
+                                                              MPI_Datatype
+                                                              datatype,
+                                                              MPI_Op op,
+                                                              MPIR_Comm * comm,
+                                                              MPIR_Errflag_t * errflag)
 {
     MPI_Aint type_size = 0;
     int nbytes = 0;
@@ -97,12 +100,13 @@ MPIDI_coll_algo_container_t *MPIDI_CH4_Allreduce_select(const void *sendbuf,
 }
 
 MPL_STATIC_INLINE_PREFIX const
-MPIDI_coll_algo_container_t *MPIDI_CH4_Reduce_select(const void *sendbuf,
-                                                     void *recvbuf,
-                                                     int count,
-                                                     MPI_Datatype datatype,
-                                                     MPI_Op op, int root,
-                                                     MPIR_Comm * comm, MPIR_Errflag_t * errflag)
+MPIDI_CH4I_coll_algo_container_t *MPIDI_CH4I_Reduce_select(const void *sendbuf,
+                                                           void *recvbuf,
+                                                           int count,
+                                                           MPI_Datatype datatype,
+                                                           MPI_Op op, int root,
+                                                           MPIR_Comm * comm,
+                                                           MPIR_Errflag_t * errflag)
 {
     int is_commutative = -1;
     MPI_Aint type_size = 0;
@@ -127,14 +131,15 @@ MPIDI_coll_algo_container_t *MPIDI_CH4_Reduce_select(const void *sendbuf,
 }
 
 MPL_STATIC_INLINE_PREFIX const
-MPIDI_coll_algo_container_t *MPIDI_CH4_Gather_select(const void *sendbuf,
-                                                     int sendcount,
-                                                     MPI_Datatype sendtype,
-                                                     void *recvbuf,
-                                                     int recvcount,
-                                                     MPI_Datatype recvtype,
-                                                     int root,
-                                                     MPIR_Comm * comm, MPIR_Errflag_t * errflag)
+MPIDI_CH4I_coll_algo_container_t *MPIDI_CH4I_Gather_select(const void *sendbuf,
+                                                           int sendcount,
+                                                           MPI_Datatype sendtype,
+                                                           void *recvbuf,
+                                                           int recvcount,
+                                                           MPI_Datatype recvtype,
+                                                           int root,
+                                                           MPIR_Comm * comm,
+                                                           MPIR_Errflag_t * errflag)
 {
     if (comm->comm_kind == MPIR_COMM_KIND__INTERCOMM) {
         return &MPIDI_CH4I_Gather_inter_composition_alpha_cnt;
@@ -144,15 +149,16 @@ MPIDI_coll_algo_container_t *MPIDI_CH4_Gather_select(const void *sendbuf,
 }
 
 MPL_STATIC_INLINE_PREFIX const
-MPIDI_coll_algo_container_t *MPIDI_CH4_Gatherv_select(const void *sendbuf,
-                                                      int sendcount,
-                                                      MPI_Datatype sendtype,
-                                                      void *recvbuf,
-                                                      const int *recvcounts,
-                                                      const int *displs,
-                                                      MPI_Datatype recvtype,
-                                                      int root,
-                                                      MPIR_Comm * comm, MPIR_Errflag_t * errflag)
+MPIDI_CH4I_coll_algo_container_t *MPIDI_CH4I_Gatherv_select(const void *sendbuf,
+                                                            int sendcount,
+                                                            MPI_Datatype sendtype,
+                                                            void *recvbuf,
+                                                            const int *recvcounts,
+                                                            const int *displs,
+                                                            MPI_Datatype recvtype,
+                                                            int root,
+                                                            MPIR_Comm * comm,
+                                                            MPIR_Errflag_t * errflag)
 {
     if (comm->comm_kind == MPIR_COMM_KIND__INTERCOMM) {
         return &MPIDI_CH4I_Gatherv_inter_composition_alpha_cnt;
@@ -162,14 +168,15 @@ MPIDI_coll_algo_container_t *MPIDI_CH4_Gatherv_select(const void *sendbuf,
 }
 
 MPL_STATIC_INLINE_PREFIX const
-MPIDI_coll_algo_container_t *MPIDI_CH4_Scatter_select(const void *sendbuf,
-                                                      int sendcount,
-                                                      MPI_Datatype sendtype,
-                                                      void *recvbuf,
-                                                      int recvcount,
-                                                      MPI_Datatype recvtype,
-                                                      int root,
-                                                      MPIR_Comm * comm, MPIR_Errflag_t * errflag)
+MPIDI_CH4I_coll_algo_container_t *MPIDI_CH4I_Scatter_select(const void *sendbuf,
+                                                            int sendcount,
+                                                            MPI_Datatype sendtype,
+                                                            void *recvbuf,
+                                                            int recvcount,
+                                                            MPI_Datatype recvtype,
+                                                            int root,
+                                                            MPIR_Comm * comm,
+                                                            MPIR_Errflag_t * errflag)
 {
 
     if (comm->comm_kind == MPIR_COMM_KIND__INTERCOMM) {
@@ -180,15 +187,16 @@ MPIDI_coll_algo_container_t *MPIDI_CH4_Scatter_select(const void *sendbuf,
 }
 
 MPL_STATIC_INLINE_PREFIX const
-MPIDI_coll_algo_container_t *MPIDI_CH4_Scatterv_select(const void *sendbuf,
-                                                       const int *sendcounts,
-                                                       const int *displs,
-                                                       MPI_Datatype sendtype,
-                                                       void *recvbuf,
-                                                       int recvcount,
-                                                       MPI_Datatype recvtype,
-                                                       int root,
-                                                       MPIR_Comm * comm, MPIR_Errflag_t * errflag)
+MPIDI_CH4I_coll_algo_container_t *MPIDI_CH4I_Scatterv_select(const void *sendbuf,
+                                                             const int *sendcounts,
+                                                             const int *displs,
+                                                             MPI_Datatype sendtype,
+                                                             void *recvbuf,
+                                                             int recvcount,
+                                                             MPI_Datatype recvtype,
+                                                             int root,
+                                                             MPIR_Comm * comm,
+                                                             MPIR_Errflag_t * errflag)
 {
 
     if (comm->comm_kind == MPIR_COMM_KIND__INTERCOMM) {
@@ -199,13 +207,14 @@ MPIDI_coll_algo_container_t *MPIDI_CH4_Scatterv_select(const void *sendbuf,
 }
 
 MPL_STATIC_INLINE_PREFIX const
-MPIDI_coll_algo_container_t *MPIDI_CH4_Alltoall_select(const void *sendbuf,
-                                                       int sendcount,
-                                                       MPI_Datatype sendtype,
-                                                       void *recvbuf,
-                                                       int recvcount,
-                                                       MPI_Datatype recvtype,
-                                                       MPIR_Comm * comm, MPIR_Errflag_t * errflag)
+MPIDI_CH4I_coll_algo_container_t *MPIDI_CH4I_Alltoall_select(const void *sendbuf,
+                                                             int sendcount,
+                                                             MPI_Datatype sendtype,
+                                                             void *recvbuf,
+                                                             int recvcount,
+                                                             MPI_Datatype recvtype,
+                                                             MPIR_Comm * comm,
+                                                             MPIR_Errflag_t * errflag)
 {
     if (comm->comm_kind == MPIR_COMM_KIND__INTERCOMM) {
         return &MPIDI_CH4I_Alltoall_inter_composition_alpha_cnt;
@@ -215,14 +224,15 @@ MPIDI_coll_algo_container_t *MPIDI_CH4_Alltoall_select(const void *sendbuf,
 }
 
 MPL_STATIC_INLINE_PREFIX const
-MPIDI_coll_algo_container_t *MPIDI_CH4_Alltoallv_select(const void *sendbuf,
-                                                        const int *sendcounts,
-                                                        const int *sdispls,
-                                                        MPI_Datatype sendtype, void *recvbuf,
-                                                        const int *recvcounts,
-                                                        const int *rdispls,
-                                                        MPI_Datatype recvtype,
-                                                        MPIR_Comm * comm, MPIR_Errflag_t * errflag)
+MPIDI_CH4I_coll_algo_container_t *MPIDI_CH4I_Alltoallv_select(const void *sendbuf,
+                                                              const int *sendcounts,
+                                                              const int *sdispls,
+                                                              MPI_Datatype sendtype, void *recvbuf,
+                                                              const int *recvcounts,
+                                                              const int *rdispls,
+                                                              MPI_Datatype recvtype,
+                                                              MPIR_Comm * comm,
+                                                              MPIR_Errflag_t * errflag)
 {
     if (comm->comm_kind == MPIR_COMM_KIND__INTERCOMM) {
         return &MPIDI_CH4I_Alltoallv_inter_composition_alpha_cnt;
@@ -232,14 +242,15 @@ MPIDI_coll_algo_container_t *MPIDI_CH4_Alltoallv_select(const void *sendbuf,
 }
 
 MPL_STATIC_INLINE_PREFIX const
-MPIDI_coll_algo_container_t *MPIDI_CH4_Alltoallw_select(const void *sendbuf,
-                                                        const int sendcounts[],
-                                                        const int sdispls[],
-                                                        const MPI_Datatype sendtypes[],
-                                                        void *recvbuf, const int recvcounts[],
-                                                        const int rdispls[],
-                                                        const MPI_Datatype recvtypes[],
-                                                        MPIR_Comm * comm, MPIR_Errflag_t * errflag)
+MPIDI_CH4I_coll_algo_container_t *MPIDI_CH4I_Alltoallw_select(const void *sendbuf,
+                                                              const int sendcounts[],
+                                                              const int sdispls[],
+                                                              const MPI_Datatype sendtypes[],
+                                                              void *recvbuf, const int recvcounts[],
+                                                              const int rdispls[],
+                                                              const MPI_Datatype recvtypes[],
+                                                              MPIR_Comm * comm,
+                                                              MPIR_Errflag_t * errflag)
 {
     if (comm->comm_kind == MPIR_COMM_KIND__INTERCOMM) {
         return &MPIDI_CH4I_Alltoallw_inter_composition_alpha_cnt;
@@ -249,10 +260,11 @@ MPIDI_coll_algo_container_t *MPIDI_CH4_Alltoallw_select(const void *sendbuf,
 }
 
 MPL_STATIC_INLINE_PREFIX const
-MPIDI_coll_algo_container_t *MPIDI_CH4_Allgather_select(const void *sendbuf, int sendcount,
-                                                        MPI_Datatype sendtype, void *recvbuf,
-                                                        int recvcount, MPI_Datatype recvtype,
-                                                        MPIR_Comm * comm, MPIR_Errflag_t * errflag)
+MPIDI_CH4I_coll_algo_container_t *MPIDI_CH4I_Allgather_select(const void *sendbuf, int sendcount,
+                                                              MPI_Datatype sendtype, void *recvbuf,
+                                                              int recvcount, MPI_Datatype recvtype,
+                                                              MPIR_Comm * comm,
+                                                              MPIR_Errflag_t * errflag)
 {
     if (comm->comm_kind == MPIR_COMM_KIND__INTERCOMM) {
         return &MPIDI_CH4I_Allgather_inter_composition_alpha_cnt;
@@ -262,12 +274,13 @@ MPIDI_coll_algo_container_t *MPIDI_CH4_Allgather_select(const void *sendbuf, int
 }
 
 MPL_STATIC_INLINE_PREFIX const
-MPIDI_coll_algo_container_t *MPIDI_CH4_Allgatherv_select(const void *sendbuf, int sendcount,
-                                                         MPI_Datatype sendtype, void *recvbuf,
-                                                         const int *recvcounts,
-                                                         const int *displs,
-                                                         MPI_Datatype recvtype,
-                                                         MPIR_Comm * comm, MPIR_Errflag_t * errflag)
+MPIDI_CH4I_coll_algo_container_t *MPIDI_CH4I_Allgatherv_select(const void *sendbuf, int sendcount,
+                                                               MPI_Datatype sendtype, void *recvbuf,
+                                                               const int *recvcounts,
+                                                               const int *displs,
+                                                               MPI_Datatype recvtype,
+                                                               MPIR_Comm * comm,
+                                                               MPIR_Errflag_t * errflag)
 {
     if (comm->comm_kind == MPIR_COMM_KIND__INTERCOMM) {
         return &MPIDI_CH4I_Allgatherv_inter_composition_alpha_cnt;
@@ -277,12 +290,12 @@ MPIDI_coll_algo_container_t *MPIDI_CH4_Allgatherv_select(const void *sendbuf, in
 }
 
 MPL_STATIC_INLINE_PREFIX const
-MPIDI_coll_algo_container_t *MPIDI_CH4_Reduce_scatter_select(const void *sendbuf,
-                                                             void *recvbuf,
-                                                             const int recvcounts[],
-                                                             MPI_Datatype datatype,
-                                                             MPI_Op op, MPIR_Comm * comm,
-                                                             MPIR_Errflag_t * errflag)
+MPIDI_CH4I_coll_algo_container_t *MPIDI_CH4I_Reduce_scatter_select(const void *sendbuf,
+                                                                   void *recvbuf,
+                                                                   const int recvcounts[],
+                                                                   MPI_Datatype datatype,
+                                                                   MPI_Op op, MPIR_Comm * comm,
+                                                                   MPIR_Errflag_t * errflag)
 {
 
     if (comm->comm_kind == MPIR_COMM_KIND__INTERCOMM) {
@@ -293,12 +306,13 @@ MPIDI_coll_algo_container_t *MPIDI_CH4_Reduce_scatter_select(const void *sendbuf
 }
 
 MPL_STATIC_INLINE_PREFIX const
-MPIDI_coll_algo_container_t *MPIDI_CH4_Reduce_scatter_block_select(const void *sendbuf,
-                                                                   void *recvbuf,
-                                                                   int recvcount,
-                                                                   MPI_Datatype datatype,
-                                                                   MPI_Op op, MPIR_Comm * comm,
-                                                                   MPIR_Errflag_t * errflag)
+MPIDI_CH4I_coll_algo_container_t *MPIDI_CH4I_Reduce_scatter_block_select(const void *sendbuf,
+                                                                         void *recvbuf,
+                                                                         int recvcount,
+                                                                         MPI_Datatype datatype,
+                                                                         MPI_Op op,
+                                                                         MPIR_Comm * comm,
+                                                                         MPIR_Errflag_t * errflag)
 {
 
     if (comm->comm_kind == MPIR_COMM_KIND__INTERCOMM) {
@@ -309,12 +323,12 @@ MPIDI_coll_algo_container_t *MPIDI_CH4_Reduce_scatter_block_select(const void *s
 }
 
 MPL_STATIC_INLINE_PREFIX const
-MPIDI_coll_algo_container_t *MPIDI_CH4_Scan_select(const void *sendbuf,
-                                                   void *recvbuf,
-                                                   int count,
-                                                   MPI_Datatype datatype,
-                                                   MPI_Op op, MPIR_Comm * comm,
-                                                   MPIR_Errflag_t * errflag)
+MPIDI_CH4I_coll_algo_container_t *MPIDI_CH4I_Scan_select(const void *sendbuf,
+                                                         void *recvbuf,
+                                                         int count,
+                                                         MPI_Datatype datatype,
+                                                         MPI_Op op, MPIR_Comm * comm,
+                                                         MPIR_Errflag_t * errflag)
 {
     if (MPII_Comm_is_node_consecutive(comm)) {
         return &MPIDI_CH4I_Scan_intra_composition_alpha_cnt;
@@ -324,12 +338,12 @@ MPIDI_coll_algo_container_t *MPIDI_CH4_Scan_select(const void *sendbuf,
 }
 
 MPL_STATIC_INLINE_PREFIX const
-MPIDI_coll_algo_container_t *MPIDI_CH4_Exscan_select(const void *sendbuf,
-                                                     void *recvbuf,
-                                                     int count,
-                                                     MPI_Datatype datatype,
-                                                     MPI_Op op, MPIR_Comm * comm,
-                                                     MPIR_Errflag_t * errflag)
+MPIDI_CH4I_coll_algo_container_t *MPIDI_CH4I_Exscan_select(const void *sendbuf,
+                                                           void *recvbuf,
+                                                           int count,
+                                                           MPI_Datatype datatype,
+                                                           MPI_Op op, MPIR_Comm * comm,
+                                                           MPIR_Errflag_t * errflag)
 {
     return &MPIDI_CH4I_Exscan_intra_composition_alpha_cnt;
 }

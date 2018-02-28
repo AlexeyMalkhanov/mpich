@@ -12,7 +12,7 @@
 
 typedef union MPIDI_Barrier_algo_params {
     /* *INDENT-OFF* */
-    MPIDI_CH4_BARRIER_PARAMS_DECL;
+    MPIDI_CH4I_BARRIER_PARAMS_DECL;
     @ch4_netmod_barrier_params_decl@
     @ch4_shm_barrier_params_decl@
     /* *INDENT-ON* */
@@ -20,7 +20,7 @@ typedef union MPIDI_Barrier_algo_params {
 
 typedef union MPIDI_Bcast_algo_params {
     /* *INDENT-OFF* */
-    MPIDI_CH4_BCAST_PARAMS_DECL;
+    MPIDI_CH4I_BCAST_PARAMS_DECL;
     @ch4_netmod_bcast_params_decl@
     @ch4_shm_bcast_params_decl@
     /* *INDENT-ON* */
@@ -28,7 +28,7 @@ typedef union MPIDI_Bcast_algo_params {
 
 typedef union MPIDI_Reduce_algo_params {
     /* *INDENT-OFF* */
-    MPIDI_CH4_REDUCE_PARAMS_DECL;
+    MPIDI_CH4I_REDUCE_PARAMS_DECL;
     @ch4_netmod_reduce_params_decl@
     @ch4_shm_reduce_params_decl@
     /* *INDENT-ON* */
@@ -36,7 +36,7 @@ typedef union MPIDI_Reduce_algo_params {
 
 typedef union MPIDI_Allreduce_algo_params {
     /* *INDENT-OFF* */
-    MPIDI_CH4_ALLREDUCE_PARAMS_DECL;
+    MPIDI_CH4I_ALLREDUCE_PARAMS_DECL;
     @ch4_netmod_allreduce_params_decl@
     @ch4_shm_allreduce_params_decl@
     /* *INDENT-ON* */
@@ -44,7 +44,7 @@ typedef union MPIDI_Allreduce_algo_params {
 
 typedef union MPIDI_Alltoall_algo_params {
     /* *INDENT-OFF* */
-    MPIDI_CH4_ALLTOALL_PARAMS_DECL;
+    MPIDI_CH4I_ALLTOALL_PARAMS_DECL;
     @ch4_netmod_alltoall_params_decl@
     @ch4_shm_alltoall_params_decl@
     /* *INDENT-ON* */
@@ -52,7 +52,7 @@ typedef union MPIDI_Alltoall_algo_params {
 
 typedef union MPIDI_Alltoallv_algo_params {
     /* *INDENT-OFF* */
-    MPIDI_CH4_ALLTOALLV_PARAMS_DECL;
+    MPIDI_CH4I_ALLTOALLV_PARAMS_DECL;
     @ch4_netmod_alltoallv_params_decl@
     @ch4_shm_alltoallv_params_decl@
     /* *INDENT-ON* */
@@ -60,7 +60,7 @@ typedef union MPIDI_Alltoallv_algo_params {
 
 typedef union MPIDI_Alltoallw_algo_params {
     /* *INDENT-OFF* */
-    MPIDI_CH4_ALLTOALLW_PARAMS_DECL;
+    MPIDI_CH4I_ALLTOALLW_PARAMS_DECL;
     @ch4_netmod_alltoallw_params_decl@
     @ch4_shm_alltoallw_params_decl@
     /* *INDENT-ON* */
@@ -68,7 +68,7 @@ typedef union MPIDI_Alltoallw_algo_params {
 
 typedef union MPIDI_Allgather_algo_params {
     /* *INDENT-OFF* */
-    MPIDI_CH4_ALLGATHER_PARAMS_DECL;
+    MPIDI_CH4I_ALLGATHER_PARAMS_DECL;
     @ch4_netmod_allgather_params_decl@
     @ch4_shm_allgather_params_decl@
     /* *INDENT-ON* */
@@ -76,7 +76,7 @@ typedef union MPIDI_Allgather_algo_params {
 
 typedef union MPIDI_Allgatherv_algo_params {
     /* *INDENT-OFF* */
-    MPIDI_CH4_ALLGATHERV_PARAMS_DECL;
+    MPIDI_CH4I_ALLGATHERV_PARAMS_DECL;
     @ch4_netmod_allgatherv_params_decl@
     @ch4_shm_allgatherv_params_decl@
     /* *INDENT-ON* */
@@ -84,7 +84,7 @@ typedef union MPIDI_Allgatherv_algo_params {
 
 typedef union MPIDI_Gather_algo_params {
     /* *INDENT-OFF* */
-    MPIDI_CH4_GATHER_PARAMS_DECL;
+    MPIDI_CH4I_GATHER_PARAMS_DECL;
     @ch4_netmod_gather_params_decl@
     @ch4_shm_gather_params_decl@
     /* *INDENT-ON* */
@@ -92,7 +92,7 @@ typedef union MPIDI_Gather_algo_params {
 
 typedef union MPIDI_Gatherv_algo_params {
     /* *INDENT-OFF* */
-    MPIDI_CH4_GATHERV_PARAMS_DECL;
+    MPIDI_CH4I_GATHERV_PARAMS_DECL;
     @ch4_netmod_gatherv_params_decl@
     @ch4_shm_gatherv_params_decl@
     /* *INDENT-ON* */
@@ -100,7 +100,7 @@ typedef union MPIDI_Gatherv_algo_params {
 
 typedef union MPIDI_Scatter_algo_params {
     /* *INDENT-OFF* */
-    MPIDI_CH4_SCATTER_PARAMS_DECL;
+    MPIDI_CH4I_SCATTER_PARAMS_DECL;
     @ch4_netmod_scatter_params_decl@
     @ch4_shm_scatter_params_decl@
     /* *INDENT-ON* */
@@ -108,7 +108,7 @@ typedef union MPIDI_Scatter_algo_params {
 
 typedef union MPIDI_Scatterv_algo_params {
     /* *INDENT-OFF* */
-    MPIDI_CH4_SCATTERV_PARAMS_DECL;
+    MPIDI_CH4I_SCATTERV_PARAMS_DECL;
     @ch4_netmod_scatterv_params_decl@
     @ch4_shm_scatterv_params_decl@
     /* *INDENT-ON* */
@@ -116,7 +116,7 @@ typedef union MPIDI_Scatterv_algo_params {
 
 typedef union MPIDI_Reduce_scatter_algo_params {
     /* *INDENT-OFF* */
-    MPIDI_CH4_REDUCE_SCATTER_PARAMS_DECL;
+    MPIDI_CH4I_REDUCE_SCATTER_PARAMS_DECL;
     @ch4_netmod_reduce_scatter_params_decl@
     @ch4_shm_reduce_scatter_params_decl@
     /* *INDENT-ON* */
@@ -124,7 +124,7 @@ typedef union MPIDI_Reduce_scatter_algo_params {
 
 typedef union MPIDI_Reduce_scatter_block_algo_params {
     /* *INDENT-OFF* */
-    MPIDI_CH4_REDUCE_SCATTER_BLOCK_PARAMS_DECL;
+    MPIDI_CH4I_REDUCE_SCATTER_BLOCK_PARAMS_DECL;
     @ch4_netmod_reduce_scatter_block_params_decl@
     @ch4_shm_reduce_scatter_block_params_decl@
     /* *INDENT-ON* */
@@ -132,7 +132,7 @@ typedef union MPIDI_Reduce_scatter_block_algo_params {
 
 typedef union MPIDI_Scan_algo_params {
     /* *INDENT-OFF* */
-    MPIDI_CH4_SCAN_PARAMS_DECL;
+    MPIDI_CH4I_SCAN_PARAMS_DECL;
     @ch4_netmod_scan_params_decl@
     @ch4_shm_scan_params_decl@
     /* *INDENT-ON* */
@@ -140,7 +140,7 @@ typedef union MPIDI_Scan_algo_params {
 
 typedef union MPIDI_Exscan_algo_params {
     /* *INDENT-OFF* */
-    MPIDI_CH4_EXSCAN_PARAMS_DECL;
+    MPIDI_CH4I_EXSCAN_PARAMS_DECL;
     @ch4_netmod_exscan_params_decl@
     @ch4_shm_exscan_params_decl@
     /* *INDENT-ON* */
@@ -189,6 +189,6 @@ typedef struct MPIDI_coll_algo_generic_container {
     MPIDI_coll_algo_generic_params_t params;
 } MPIDI_coll_algo_generic_container_t;
 
-const void *MPIDI_coll_get_next_container(const void *container);
+const void *MPIDI_CH4_coll_get_next_container(const void *container);
 
 #endif /* COLL_ALGO_PARAMS_H_INCLUDED */
