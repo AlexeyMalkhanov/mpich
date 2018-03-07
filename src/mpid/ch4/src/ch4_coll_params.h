@@ -4,6 +4,7 @@
 typedef enum {
     MPIDI_CH4I_Barrier_intra_composition_alpha_id,
     MPIDI_CH4I_Barrier_intra_composition_beta_id,
+    MPIDI_CH4I_Barrier_intra_composition_gamma_id,
     MPIDI_CH4I_Barrier_inter_composition_alpha_id,
 } MPIDI_CH4I_Barrier_id_t;
 
@@ -16,12 +17,16 @@ typedef union {
     struct MPIDI_CH4I_Barrier_beta {
         int barrier;
     } ch4_barrier_beta;
+    struct MPIDI_CH4I_Barrier_gamma {
+        int barrier;
+    } ch4_barrier_gamma;
 } MPIDI_CH4I_Barrier_params_t;
 
 typedef enum {
     MPIDI_CH4I_Bcast_intra_composition_alpha_id,
     MPIDI_CH4I_Bcast_intra_composition_beta_id,
     MPIDI_CH4I_Bcast_intra_composition_gamma_id,
+    MPIDI_CH4I_Bcast_intra_composition_delta_id,
     MPIDI_CH4I_Bcast_inter_composition_alpha_id,
 } MPIDI_CH4I_Bcast_id_t;
 
@@ -38,11 +43,15 @@ typedef union {
     struct MPIDI_CH4I_Bcast_gamma {
         int bcast;
     } ch4_bcast_gamma;
+    struct MPIDI_CH4I_Bcast_delta {
+        int bcast;
+    } ch4_bcast_delta;
 } MPIDI_CH4I_Bcast_params_t;
 
 typedef enum {
     MPIDI_CH4I_Reduce_intra_composition_alpha_id,
     MPIDI_CH4I_Reduce_intra_composition_beta_id,
+    MPIDI_CH4I_Reduce_intra_composition_gamma_id,
     MPIDI_CH4I_Reduce_inter_composition_alpha_id,
 } MPIDI_CH4I_Reduce_id_t;
 
@@ -54,11 +63,15 @@ typedef union {
     struct MPIDI_CH4I_Reduce_beta {
         int reduce;
     } ch4_reduce_beta;
+    struct MPIDI_CH4I_Reduce_gamma {
+        int reduce;
+    } ch4_reduce_gamma;
 } MPIDI_CH4I_Reduce_params_t;
 
 typedef enum {
     MPIDI_CH4I_Allreduce_intra_composition_alpha_id,
     MPIDI_CH4I_Allreduce_intra_composition_beta_id,
+    MPIDI_CH4I_Allreduce_intra_composition_gamma_id,
     MPIDI_CH4I_Allreduce_inter_composition_alpha_id,
 } MPIDI_CH4I_Allreduce_id_t;
 
@@ -71,10 +84,14 @@ typedef union {
     struct MPIDI_CH4I_Allreduce_beta {
         int allreduce;
     } ch4_allreduce_beta;
+    struct MPIDI_CH4I_Allreduce_gamma {
+        int allreduce;
+    } ch4_allreduce_gamma;
 } MPIDI_CH4I_Allreduce_params_t;
 
 typedef enum {
     MPIDI_CH4I_Alltoall_intra_composition_alpha_id,
+    MPIDI_CH4I_Alltoall_intra_composition_beta_id,
     MPIDI_CH4I_Alltoall_inter_composition_alpha_id
 } MPIDI_CH4I_Alltoall_id_t;
 
@@ -82,10 +99,14 @@ typedef union {
     struct MPIDI_CH4I_Alltoall_alpha {
         int alltoall;
     } ch4_alltoall_alpha;
+    struct MPIDI_CH4I_Alltoall_beta {
+        int alltoall;
+    } ch4_alltoall_beta;
 } MPIDI_CH4I_Alltoall_params_t;
 
 typedef enum {
     MPIDI_CH4I_Alltoallv_intra_composition_alpha_id,
+    MPIDI_CH4I_Alltoallv_intra_composition_beta_id,
     MPIDI_CH4I_Alltoallv_inter_composition_alpha_id
 } MPIDI_CH4I_Alltoallv_id_t;
 
@@ -93,10 +114,14 @@ typedef union {
     struct MPIDI_CH4I_Alltoallv_alpha {
         int alltoallv;
     } ch4_alltoallv_alpha;
+    struct MPIDI_CH4I_Alltoallv_beta {
+        int alltoallv;
+    } ch4_alltoallv_beta;
 } MPIDI_CH4I_Alltoallv_params_t;
 
 typedef enum {
     MPIDI_CH4I_Alltoallw_intra_composition_alpha_id,
+    MPIDI_CH4I_Alltoallw_intra_composition_beta_id,
     MPIDI_CH4I_Alltoallw_inter_composition_alpha_id
 } MPIDI_CH4I_Alltoallw_id_t;
 
@@ -104,10 +129,14 @@ typedef union {
     struct MPIDI_CH4I_Alltoallw_alpha {
         int alltoallw;
     } ch4_alltoallw_alpha;
+    struct MPIDI_CH4I_Alltoallw_beta {
+        int alltoallw;
+    } ch4_alltoallw_beta;
 } MPIDI_CH4I_Alltoallw_params_t;
 
 typedef enum {
     MPIDI_CH4I_Allgather_intra_composition_alpha_id,
+    MPIDI_CH4I_Allgather_intra_composition_beta_id,
     MPIDI_CH4I_Allgather_inter_composition_alpha_id
 } MPIDI_CH4I_Allgather_id_t;
 
@@ -115,10 +144,14 @@ typedef union {
     struct MPIDI_CH4I_Allgather_alpha {
         int allgather;
     } ch4_allgather_alpha;
+    struct MPIDI_CH4I_Allgather_beta {
+        int allgather;
+    } ch4_allgather_beta;
 } MPIDI_CH4I_Allgather_params_t;
 
 typedef enum {
     MPIDI_CH4I_Allgatherv_intra_composition_alpha_id,
+    MPIDI_CH4I_Allgatherv_intra_composition_beta_id,
     MPIDI_CH4I_Allgatherv_inter_composition_alpha_id
 } MPIDI_CH4I_allgatherv_id_t;
 
@@ -126,10 +159,14 @@ typedef union {
     struct MPIDI_CH4I_Allgatherv_alpha {
         int allgatherv;
     } ch4_allgatherv_alpha;
+    struct MPIDI_CH4I_Allgatherv_beta {
+        int allgatherv;
+    } ch4_allgatherv_beta;
 } MPIDI_CH4I_Allgatherv_params_t;
 
 typedef enum {
     MPIDI_CH4I_Gather_intra_composition_alpha_id,
+    MPIDI_CH4I_Gather_intra_composition_beta_id,
     MPIDI_CH4I_Gather_inter_composition_alpha_id
 } MPIDI_CH4I_Gather_id_t;
 
@@ -137,10 +174,14 @@ typedef union {
     struct MPIDI_CH4I_Gather_alpha {
         int gather;
     } ch4_gather_alpha;
+    struct MPIDI_CH4I_Gather_beta {
+        int gather;
+    } ch4_gather_beta;
 } MPIDI_CH4I_Gather_params_t;
 
 typedef enum {
     MPIDI_CH4I_Gatherv_intra_composition_alpha_id,
+    MPIDI_CH4I_Gatherv_intra_composition_beta_id,
     MPIDI_CH4I_Gatherv_inter_composition_alpha_id
 } MPIDI_CH4I_Gatherv_id_t;
 
@@ -148,10 +189,14 @@ typedef union {
     struct MPIDI_CH4I_Gatherv_alpha {
         int gatherv;
     } ch4_gatherv_alpha;
+    struct MPIDI_CH4I_Gatherv_beta {
+        int gatherv;
+    } ch4_gatherv_beta;
 } MPIDI_CH4I_Gatherv_params_t;
 
 typedef enum {
     MPIDI_CH4I_Scatter_intra_composition_alpha_id,
+    MPIDI_CH4I_Scatter_intra_composition_beta_id,
     MPIDI_CH4I_Scatter_inter_composition_alpha_id
 } MPIDI_CH4I_Scatter_id_t;
 
@@ -159,10 +204,14 @@ typedef union {
     struct MPIDI_CH4I_Scatter_alpha {
         int scatter;
     } ch4_scatter_alpha;
+    struct MPIDI_CH4I_Scatter_beta {
+        int scatter;
+    } ch4_scatter_beta;
 } MPIDI_CH4I_Scatter_params_t;
 
 typedef enum {
     MPIDI_CH4I_Scatterv_intra_composition_alpha_id,
+    MPIDI_CH4I_Scatterv_intra_composition_beta_id,
     MPIDI_CH4I_Scatterv_inter_composition_alpha_id
 } MPIDI_CH4I_Scatterv_id_t;
 
@@ -170,10 +219,14 @@ typedef union {
     struct MPIDI_CH4I_Scatterv_alpha {
         int scatterv;
     } ch4_scatterv_alpha;
+    struct MPIDI_CH4I_Scatterv_beta {
+        int scatterv;
+    } ch4_scatterv_beta;
 } MPIDI_CH4I_Scatterv_params_t;
 
 typedef enum {
     MPIDI_CH4I_Reduce_scatter_intra_composition_alpha_id,
+    MPIDI_CH4I_Reduce_scatter_intra_composition_beta_id,
     MPIDI_CH4I_Reduce_scatter_inter_composition_alpha_id
 } MPIDI_CH4I_Reduce_scatter_id_t;
 
@@ -181,10 +234,14 @@ typedef union {
     struct MPIDI_CH4I_Reduce_scatter_alpha {
         int reduce_scatter;
     } ch4_reduce_scatter_alpha;
+    struct MPIDI_CH4I_Reduce_scatter_beta {
+        int reduce_scatter;
+    } ch4_reduce_scatter_beta;
 } MPIDI_CH4I_Reduce_scatter_params_t;
 
 typedef enum {
     MPIDI_CH4I_Reduce_scatter_block_intra_composition_alpha_id,
+    MPIDI_CH4I_Reduce_scatter_block_intra_composition_beta_id,
     MPIDI_CH4I_Reduce_scatter_block_inter_composition_alpha_id
 } MPIDI_CH4I_Reduce_scatter_block__id_t;
 
@@ -192,11 +249,15 @@ typedef union {
     struct MPIDI_CH4I_Reduce_scatter_block_alpha {
         int reduce_scatter_block;
     } ch4_reduce_scatter_block_alpha;
+    struct MPIDI_CH4I_Reduce_scatter_block_beta {
+        int reduce_scatter_block;
+    } ch4_reduce_scatter_block_beta;
 } MPIDI_CH4I_Reduce_scatter_block_params_t;
 
 typedef enum {
     MPIDI_CH4I_Scan_intra_composition_alpha_id,
-    MPIDI_CH4I_Scan_intra_composition_beta_id
+    MPIDI_CH4I_Scan_intra_composition_beta_id,
+    MPIDI_CH4I_Scan_intra_composition_gamma_id,
 } MPIDI_CH4I_Scan_id_t;
 
 typedef union {
@@ -208,16 +269,23 @@ typedef union {
     struct MPIDI_CH4I_Scan_beta {
         int scan;
     } ch4_scan_beta;
+    struct MPIDI_CH4I_Scan_gamma {
+        int scan;
+    } ch4_scan_gamma;
 } MPIDI_CH4I_Scan_params_t;
 
 typedef enum {
     MPIDI_CH4I_Exscan_intra_composition_alpha_id,
+    MPIDI_CH4I_Exscan_intra_composition_beta_id,
 } MPIDI_CH4I_Exscan_id_t;
 
 typedef union {
     struct MPIDI_CH4I_Exscan_alpha {
         int exscan;
     } ch4_exscan_alpha;
+    struct MPIDI_CH4I_Exscan_beta {
+        int exscan;
+    } ch4_exscan_beta;
 } MPIDI_CH4I_Exscan_params_t;
 
 #define MPIDI_CH4I_BARRIER_PARAMS_DECL MPIDI_CH4I_Barrier_params_t ch4_barrier_params;
